@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="UTF-8">
-    <title>Create patient</title>
+<meta charset="UTF-8">
+<title>Update patient</title>
 </head>
 <body>
-<h2>Create patient</h2>
-<form action="#" th:action="@{/patient-create}" th:object="${patient}" method="post">
+<h2>Update patient</h2>
+<form action="#" th:action="@{/patients/patient-update}" th:object="${patient}" method="post">
+    <label for="id">ID</label>
+    <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
+    <br/>
     <label for="name">Name</label>
     <input type="text" th:field="*{name}" id="name" placeholder="Name">
     <br/>
@@ -19,7 +21,8 @@
     <label for="sex">Sex</label>
     <input type="text" th:field="*{sex}" id="sex" placeholder="Sex">
     <br/>
-    <input type="submit" value="Create patient">
+    <input type="submit" value="Update patient">
+    <p><a href="/patients/list">Back</a></p>
 </form>
 </body>
 </html>

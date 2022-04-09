@@ -5,7 +5,7 @@
 </head>
 <body>
 <h2>Update contract</h2>
-<form action="#" th:action="@{/contract-update}" th:object="${contract}" method="post">
+<form action="#" th:action="@{/contracts/contract-update}" th:object="${contract}" method="post">
     <label for="id">ID</label>
     <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
     <br/>
@@ -16,6 +16,7 @@
     <input type="number" th:field="*{sum}" id="sum" placeholder="Sum">
     <br/>
     <input type="submit" value="Update contract">
+    <p><a href="/contracts/list">Back</a></p>
 </form>
 </body>
 </html>
