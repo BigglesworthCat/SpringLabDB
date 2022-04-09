@@ -5,16 +5,18 @@
     <title>Create contract</title>
 </head>
 <body>
-<h2>Create contract</h2>
-<form action="#" th:action="@{/contracts/contract-create}" th:object="${contract}" method="post">
-    <label for="date">Date</label>
-    <input type="text" th:field="*{date}" id="date" placeholder="Date">
-    <br/>
-    <label for="sum">Sum</label>
-    <input type="number" th:field="*{sum}" id="sum" placeholder="Sum">
-    <br/>
-    <input type="submit" value="Create contract">
-    <p><a href="/contracts/list">Back</a></p>
-</form>
+<div align="center">
+    <h2>Create contract</h2>
+    <form action="#" th:action="@{/contracts/contract-create}" th:object="${contract}" method="post">
+        <label for="date">Date</label>
+        <input type="text" th:field="*{date}" id="date" placeholder="Date">
+        <br/>
+        <label for="sum">Sum</label>
+        <input type="number" th:field="*{sum}" id="sum" placeholder="Sum">
+        <br/>
+        <input type="submit" value="Create contract">
+        <p><a href="/contracts/list">Back</a></p>
+    </form>
+</div>
 </body>
 </html>

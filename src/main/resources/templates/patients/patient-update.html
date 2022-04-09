@@ -4,25 +4,27 @@
 <title>Update patient</title>
 </head>
 <body>
-<h2>Update patient</h2>
-<form action="#" th:action="@{/patients/patient-update}" th:object="${patient}" method="post">
-    <label for="id">ID</label>
-    <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
-    <br/>
-    <label for="name">Name</label>
-    <input type="text" th:field="*{name}" id="name" placeholder="Name">
-    <br/>
-    <label for="address">Address</label>
-    <input type="text" th:field="*{address}" id="address" placeholder="Address">
-    <br/>
-    <label for="medPolice">Med. police</label>
-    <input type="number" th:field="*{medPolice}" id="medPolice" placeholder="Med. police">
-    <br/>
-    <label for="sex">Sex</label>
-    <input type="text" th:field="*{sex}" id="sex" placeholder="Sex">
-    <br/>
-    <input type="submit" value="Update patient">
-    <p><a href="/patients/list">Back</a></p>
-</form>
+<div align="center">
+    <h2>Update patient</h2>
+    <form action="#" th:action="@{/patients/patient-update}" th:object="${patient}" method="post">
+        <label for="id">ID</label>
+        <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
+        <br/>
+        <label for="name">Name</label>
+        <input type="text" th:field="*{name}" id="name" placeholder="Name">
+        <br/>
+        <label for="address">Address</label>
+        <input type="text" th:field="*{address}" id="address" placeholder="Address">
+        <br/>
+        <label for="medPolice">Med. police</label>
+        <input type="number" th:field="*{medPolice}" id="medPolice" placeholder="Med. police">
+        <br/>
+        <label for="sex">Sex</label>
+        <input type="text" th:field="*{sex}" id="sex" placeholder="Sex">
+        <br/>
+        <input type="submit" value="Update patient">
+        <p><a href="/patients/list">Back</a></p>
+    </form>
+</div>
 </body>
 </html>
