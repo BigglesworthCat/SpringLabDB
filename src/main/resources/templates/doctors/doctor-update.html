@@ -1,38 +1,66 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<meta charset="UTF-8">
-<title>Update doctor</title>
+<head>
+    <meta charset="UTF-8">
+    <title>Update doctor</title>
+    <link rel="stylesheet" th:href="@{/myStyle.css}"/>
 </head>
-<body>
-<div align="center">
-    <h2>Update doctor</h2>
-    <form action="#" th:action="@{/doctors/doctor-update}" th:object="${doctor}" method="post">
-        <label for="id">ID</label>
-        <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
-        <br/>
-        <label for="name">Name</label>
-        <input type="text" th:field="*{name}" id="name" placeholder="Name">
-        <br/>
-        <label for="position">Position</label>
-        <input type="text" th:field="*{position}" id="position" placeholder="Position">
-        <br/>
-        <label for="cabinetNum">Cabinet</label>
-        <input type="number" th:field="*{cabinetNum}" id="cabinetNum" placeholder="Cabinet">
-        <br/>
-        <label for="workTime">Work time</label>
-        <input type="text" th:field="*{workTime}" id="workTime" placeholder="Work time">
-        <br/>
-        <label for="service">Service</label>
-        <input type="text" th:field="*{service}" id="service" placeholder="Service">
-        <br/>
-        <label for="contractId">Contract ID</label>
-        <input type="number" th:field="*{contractId}" id="contractId" placeholder="Contract ID">
-        <br/>
-        <label for="salary">Salary</label>
-        <input type="number" th:field="*{salary}" id="salary" placeholder="Salary">
-        <br/>
-        <input type="submit" value="Update doctor">
-        <p><a href="/doctors/list">Back</a></p>
+<body class="page">
+<div class="formWrapper">
+    <form class="entityForm" action="#" th:action="@{/doctors/doctor-update}" th:object="${doctor}" method="post">
+        <fieldset>
+            <legend>Update doctor</legend>
+
+            <label for="id">ID</label>
+            <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
+            <br>
+
+            <label for="name">Name:</label>
+            <input type="text" th:field="*{name}" id="name" placeholder="Name">
+            <br>
+
+            <label for="position">Position:</label>
+            <select th:field="*{position}" id="position">
+                <option value="ортопед">ортопед</option>
+                <option value="хірург">хірург</option>
+                <option value="терапевт">терапевт</option>
+            </select>
+            <br>
+
+            <label for="cabinetNum">Cabinet:</label>
+            <input type="number" th:field="*{cabinetNum}" id="cabinetNum" placeholder="Cabinet">
+            <br>
+
+            <label for="workTime">Work time:</label>
+            <select th:field="*{workTime}" id="workTime">
+                <option value="8:00-12:00">8:00-12:00</option>
+                <option value="13:00-17:00">13:00-17:00</option>
+            </select>
+            <br>
+
+            <label for="service">Service:</label>
+            <select th:field="*{service}" id="service">
+                <option value="Ортопедична">Ортопедична</option>
+                <option value="Хірургічна">Хірургічна</option>
+                <option value="Терапевтична">Терапевтична</option>
+            </select>
+            <br>
+
+            <label for="contractId">Contract ID:</label>
+            <input type="number" th:field="*{contractId}" id="contractId" placeholder="Contract ID">
+            <br>
+
+            <label for="salary">Salary:</label>
+            <input type="number" th:field="*{salary}" id="salary" placeholder="Salary">
+            <br>
+
+            <div class="horizontalButtonWrapper">
+                <div class="buttonsContainer">
+                    <input class="button buttonSubmit" type="submit" value="Submit">
+                </div>
+            </div>
+            <p><a href="/doctors/list">Back</a></p>
+        </fieldset>
     </form>
 </div>
 </body>

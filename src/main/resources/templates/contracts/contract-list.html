@@ -3,35 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Contracts</title>
+    <link rel="stylesheet" th:href="@{/myStyle.css}"/>
 </head>
-<body>
+<body class="page">
 <div th:switch="${contracts}" align="center">
-  <h2 th:case="null">No contracts found!</h2>
-  <div th:case="*">
-    <h2>Contracts</h2>
-    <table border="1">
-      <thead>
-      <tr>
-        <th>Id</th>
-        <th>Date</th>
-        <th>Sum</th>
-        <th>Edit</th>
-        <th>Delete</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr th:each="contract : ${contracts}">
-        <td th:text="${contract.id}"></td>
-        <td th:text="${contract.date}"></td>
-        <td th:text="${contract.sum}"></td>
-        <td><a th:href="@{contract-update/{id}(id=${contract.id})}">Edit</a></td>
-        <td><a th:href="@{contract-delete/{id}(id=${contract.id})}">Delete</a></td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
-  <p><a href="/contracts/contract-create">Create contract</a></p>
-  <p><a href="/">Home</a></p>
+    <h2 th:case="null">No contracts found!</h2>
+    <div th:case="*">
+        <h2>Contracts</h2>
+        <table class="entityTable">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Date</th>
+                <th>Sum</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="contract : ${contracts}">
+                <td th:text="${contract.id}"></td>
+                <td th:text="${contract.date}"></td>
+                <td th:text="${contract.sum}"></td>
+                <td><a th:href="@{contract-update/{id}(id=${contract.id})}">Edit</a></td>
+                <td><a th:href="@{contract-delete/{id}(id=${contract.id})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/contracts/contract-create">Create contract</a></p>
+    <p><a href="/">Home</a></p>
 </div>
 </body>
 </html>

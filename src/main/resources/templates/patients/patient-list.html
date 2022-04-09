@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Patients</title>
+    <link rel="stylesheet" th:href="@{/myStyle.css}"/>
 </head>
-<body>
+<body class="page">
 <div th:switch="${patients}" align="center">
     <h2 th:case="null">No patients found!</h2>
     <div th:case="*">
         <h2>Patients</h2>
-        <table border="1">
+        <table class="entityTable">
             <thead>
             <tr>
                 <th>Card Id</th>
