@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create doctor</title>
+</head>
+<body>
+<h2>Create doctor</h2>
+<form action="#" th:action="@{/doctor-create}" th:object="${doctor}" method="post">
+    <label for="name">Name</label>
+    <input type="text" th:field="*{name}" id="name" placeholder="Name">
+    <br/>
+    <label for="position">Position</label>
+    <input type="text" th:field="*{position}" id="position" placeholder="Position">
+    <br/>
+    <label for="cabinetNum">Cabinet</label>
+    <input type="number" th:field="*{cabinetNum}" id="cabinetNum" placeholder="Cabinet">
+    <br/>
+    <label for="workTime">Work time</label>
+    <input type="text" th:field="*{workTime}" id="workTime" placeholder="Work time">
+    <br/>
+    <label for="service">Service</label>
+    <input type="text" th:field="*{service}" id="service" placeholder="Service">
+    <br/>
+    <label for="contractId">Contract ID</label>
+    <input type="number" th:field="*{contractId}" id="contractId" placeholder="Contract ID">
+    <br/>
+    <label for="salary">Salary</label>
+    <input type="number" th:field="*{salary}" id="salary" placeholder="Salary">
+    <br/>
+    <input type="submit" value="Create doctor">
+</form>
+</body>
+</html>

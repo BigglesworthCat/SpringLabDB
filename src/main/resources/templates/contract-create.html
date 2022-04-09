@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create contract</title>
+</head>
+<body>
+<h2>Create contract</h2>
+<form action="#" th:action="@{/contract-create}" th:object="${contract}" method="post">
+    <label for="date">Date</label>
+    <input type="text" th:field="*{date}" id="date" placeholder="Date">
+    <br/>
+    <label for="sum">Sum</label>
+    <input type="number" th:field="*{sum}" id="sum" placeholder="Sum">
+    <br/>
+    <input type="submit" value="Create contract">
+</form>
+</body>
+</html>

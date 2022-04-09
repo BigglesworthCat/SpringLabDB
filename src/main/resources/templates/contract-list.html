@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Contracts</title>
+</head>
+<body>
+<div th:switch="${contracts}">
+  <h2 th:case="null">No contracts found!</h2>
+  <div th:case="*">
+    <h2>Contracts</h2>
+    <table border="1">
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Date</th>
+        <th>Sum</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="contract : ${contracts}">
+        <td th:text="${contract.id}"></td>
+        <td th:text="${contract.date}"></td>
+        <td th:text="${contract.sum}"></td>
+        <td><a th:href="@{contract-update/{id}(id=${contract.id})}">Edit</a></td>
+        <td><a th:href="@{contract-delete/{id}(id=${contract.id})}">Delete</a></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <p><a href="/contract-create">Create contract</a></p>
+  <p><a href="/">Home</a></p>
+</div>
+</body>
+</html>

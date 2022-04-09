@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctors</title>
+</head>
+<body>
+<div th:switch="${doctors}">
+    <h2 th:case="null">No doctors found!</h2>
+    <div th:case="*">
+        <h2>Doctors</h2>
+        <table border="1">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Cabinet</th>
+                <th>Work time</th>
+                <th>Service</th>
+                <th>Contract ID</th>
+                <th>Salary</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="doctor : ${doctors}">
+                <td th:text="${doctor.id}"></td>
+                <td th:text="${doctor.name}"></td>
+                <td th:text="${doctor.position}"></td>
+                <td th:text="${doctor.cabinetNum}"></td>
+                <td th:text="${doctor.workTime}"></td>
+                <td th:text="${doctor.service}"></td>
+                <td th:text="${doctor.contractId}"></td>
+                <td th:text="${doctor.salary}"></td>
+                <td><a th:href="@{doctor-update/{id}(id=${doctor.id})}">Edit</a></td>
+                <td><a th:href="@{doctor-delete/{id}(id=${doctor.id})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/doctor-create">Create doctor</a></p>
+    <p><a href="/">Home</a></p>
+</div>
+</body>
+</html>
