@@ -32,12 +32,12 @@
             </select>
             <label for="sex">Sex</label>
         </div>
-        <br>
 
-        <input class="buttonSubmit" type="submit" value="Submit">
-        <input class="buttonCancel" type="reset" value="Reset">
-
-        <p><a href="/patients/list">Back</a></p>
+        <div class="button-holder">
+            <a href="/patients/list"><input type="button" value="Back"></a>
+            <input type="reset" id="reset" value="Reset">
+            <input type="submit" id="submit" value="Submit">
+        </div>
     </form>
 </div>
 <script th:src="@{/js/form.js}"></script>

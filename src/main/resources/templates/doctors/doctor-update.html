@@ -3,61 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <title>Update doctor</title>
-    <link rel="stylesheet" th:href="@{css/form.css}"/>
+    <link rel="stylesheet" th:href="@{/css/form.css}"/>
 </head>
-<body class="page">
-<div class="formWrapper">
-    <form class="entityForm" action="#" th:action="@{/doctors/doctor-update}" th:object="${doctor}" method="post">
-        <fieldset>
-            <legend>Update doctor</legend>
+<body>
+<div class="form-container">
+    <form action="#" th:action="@{/doctors/doctor-update}" th:object="${doctor}" method="post">
+        <legend>Update doctor</legend>
 
-            <label for="id">ID</label>
+        <div class="input-container">
             <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
-            <br>
+            <label for="id">ID</label>
+        </div>
 
-            <label for="name">Name:</label>
-            <input type="text" th:field="*{name}" id="name" placeholder="Name">
-            <br>
+        <div class="input-container">
+            <input type="text" th:field="*{name}" id="name">
+            <label for="name">Name</label>
+        </div>
 
-            <label for="position">Position:</label>
+        <div class="input-container">
             <select th:field="*{position}" id="position">
                 <option value="ортопед">ортопед</option>
                 <option value="хірург">хірург</option>
                 <option value="терапевт">терапевт</option>
             </select>
-            <br>
+            <label for="position">Position</label>
+        </div>
 
-            <label for="cabinetNum">Cabinet:</label>
-            <input type="number" th:field="*{cabinetNum}" id="cabinetNum" placeholder="Cabinet">
-            <br>
+        <div class="input-container">
+            <input type="number" th:field="*{cabinetNum}" id="cabinetNum">
+            <label for="cabinetNum">Cabinet</label>
+        </div>
 
-            <label for="workTime">Work time:</label>
+        <div class="input-container">
             <select th:field="*{workTime}" id="workTime">
                 <option value="8:00-12:00">8:00-12:00</option>
                 <option value="13:00-17:00">13:00-17:00</option>
             </select>
-            <br>
+            <label for="workTime">Work time</label>
+        </div>
 
-            <label for="service">Service:</label>
+        <div class="input-container">
             <select th:field="*{service}" id="service">
                 <option value="Ортопедична">Ортопедична</option>
                 <option value="Хірургічна">Хірургічна</option>
                 <option value="Терапевтична">Терапевтична</option>
             </select>
-            <br>
+            <label for="service">Service</label>
+        </div>
 
-            <label for="contractId">Contract ID:</label>
-            <input type="number" th:field="*{contractId}" id="contractId" placeholder="Contract ID">
-            <br>
+        <div class="input-container">
+            <input type="number" th:field="*{contractId}" id="contractId">
+            <label for="contractId">Contract ID</label>
+        </div>
 
-            <label for="salary">Salary:</label>
-            <input type="number" th:field="*{salary}" id="salary" placeholder="Salary">
-            <br>
+        <div class="input-container">
+            <input type="number" th:field="*{salary}" id="salary">
+            <label for="salary">Salary</label>
+        </div>
 
-            <input class="buttonSubmit" type="submit" value="Submit">
-
-            <p><a href="/doctors/list">Back</a></p>
-        </fieldset>
+        <div class="button-holder">
+            <a href="/doctors/list"><input type="button" value="Back"></a>
+            <input type="submit" id="submit" value="Submit">
+        </div>
     </form>
 </div>
 <script th:src="@{/js/form.js}"></script>

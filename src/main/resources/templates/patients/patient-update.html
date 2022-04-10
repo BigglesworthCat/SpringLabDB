@@ -3,42 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <title>Update patient</title>
-    <link rel="stylesheet" th:href="@{css/form.css}"/>
+    <link rel="stylesheet" th:href="@{/css/form.css}"/>
 </head>
-<body class="page">
-<div class="formWrapper">
-    <form class="entityForm" action="#" th:action="@{/patients/patient-update}" th:object="${patient}" method="post">
-        <fieldset>
-            <legend>Update patient</legend>
+<body>
+<div class="form-container">
+    <form action="#" th:action="@{/patients/patient-update}" th:object="${patient}" method="post">
+        <legend>Update patient</legend>
 
-            <label for="id">ID</label>
+        <div class="input-container">
             <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
-            <br>
+            <label for="id">ID</label>
+        </div>
 
-            <label for="name">Name:</label>
-            <input type="text" th:field="*{name}" id="name" placeholder="Name">
-            <br>
+        <div class="input-container">
+            <input type="text" th:field="*{name}" id="name">
+            <label for="name">Name</label>
+        </div>
 
-            <label for="address">Address:</label>
-            <input type="text" th:field="*{address}" id="address" placeholder="Address">
-            <br>
+        <div class="input-container">
+            <input type="text" th:field="*{address}" id="address">
+            <label for="address">Address</label>
+        </div>
 
-            <label for="medPolice">Med. police:</label>
-            <input type="number" th:field="*{medPolice}" id="medPolice" placeholder="Med. police">
-            <br>
+        <div class="input-container">
+            <input type="number" th:field="*{medPolice}" id="medPolice">
+            <label for="medPolice">Med. police</label>
+        </div>
 
-            <label for="sex">Sex:</label>
+        <div class="input-container">
             <select th:field="*{sex}" id="sex">
                 <option value="Ч">Ч</option>
                 <option value="Ж">Ж</option>
             </select>
-            <br>
+            <label for="sex">Sex</label>
+        </div>
 
-            <input class="buttonSubmit" type="submit" value="Submit">
-
-            <p><a href="/patients/list">Back</a></p>
-        </fieldset>
+        <div class="button-holder">
+            <a href="/patients/list"><input type="button" value="Back"></a>
+            <input type="reset" id="reset" value="Reset">
+            <input type="submit" id="submit" value="Submit">
+        </div>
     </form>
 </div>
+<script th:src="@{/js/form.js}"></script>
 </body>
 </html>

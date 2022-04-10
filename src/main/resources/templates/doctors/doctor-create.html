@@ -56,10 +56,11 @@
             <label for="salary">Salary</label>
         </div>
 
-        <input class="buttonSubmit" type="submit" value="Submit">
-        <input class="buttonCancel" type="reset" value="Reset">
-
-        <p><a href="/doctors/list">Back</a></p>
+        <div class="button-holder">
+            <a href="/doctors/list"><input type="button" value="Back"></a>
+            <input type="reset" id="reset" value="Reset">
+            <input type="submit" id="submit" value="Submit">
+        </div>
     </form>
 </div>
 <script th:src="@{/js/form.js}"></script>

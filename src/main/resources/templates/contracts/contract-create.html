@@ -20,10 +20,18 @@
             <label for="sum">Sum</label>
         </div>
 
-        <input class="buttonSubmit" type="submit" value="Submit">
-        <input class="buttonCancel" type="reset" value="Reset">
+<!--        <div style="background: aqua" class="button-holder">
+            <input type="reset" id="reset" value="Reset">
+            <input type="submit" id="submit" value="Submit">
+        </div>
 
-        <p><a href="/contracts/list">Back</a></p>
+        <a style="background: aqua" href="/contracts/list"><input type="button" value="Back"></a>-->
+
+        <div class="button-holder">
+            <a href="/contracts/list"><input type="button" value="Back"></a>
+            <input type="reset" id="reset" value="Reset">
+            <input type="submit" id="submit" value="Submit">
+        </div>
     </form>
 </div>
 <script th:src="@{/js/form.js}"></script>
