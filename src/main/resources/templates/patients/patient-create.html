@@ -3,42 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Create patient</title>
-    <link rel="stylesheet" th:href="@{/myStyle.css}"/>
+    <link rel="stylesheet" th:href="@{/css/form.css}"/>
 </head>
-<body class="page">
-<div class="formWrapper">
+<body>
+<div class="form-container">
     <form class="entityForm" action="#" th:action="@{/patients/patient-create}" th:object="${patient}" method="post">
-        <fieldset>
-            <legend>Create patient</legend>
+        <legend>Create patient</legend>
 
-            <label for="name">Name:</label>
-            <input type="text" th:field="*{name}" id="name" placeholder="Name">
-            <br>
+        <div class="input-container">
+            <input type="text" th:field="*{name}" id="name">
+            <label for="name">Name</label>
+        </div>
 
-            <label for="address">Address:</label>
-            <input type="text" th:field="*{address}" id="address" placeholder="Address">
-            <br>
+        <div class="input-container">
+            <input type="text" th:field="*{address}" id="address">
+            <label for="address">Address</label>
+        </div>
 
-            <label for="medPolice">Med. police:</label>
-            <input type="number" th:field="*{medPolice}" id="medPolice" placeholder="Med. police">
-            <br>
+        <div class="input-container">
+            <input type="number" th:field="*{medPolice}" id="medPolice">
+            <label for="medPolice">Med. police</label>
+        </div>
 
-            <label for="sex">Sex:</label>
+        <div class="input-container">
             <select th:field="*{sex}" id="sex">
                 <option value="Ч">Ч</option>
                 <option value="Ж">Ж</option>
             </select>
-            <br>
+            <label for="sex">Sex</label>
+        </div>
+        <br>
 
-            <div class="horizontalButtonWrapper">
-                <div class="buttonsContainer">
-                    <input class="button buttonSubmit" type="submit" value="Submit">
-                    <input class="button buttonCancel" type="reset" value="Reset">
-                </div>
-            </div>
-            <p><a href="/patients/list">Back</a></p>
-        </fieldset>
+        <input class="buttonSubmit" type="submit" value="Submit">
+        <input class="buttonCancel" type="reset" value="Reset">
+
+        <p><a href="/patients/list">Back</a></p>
     </form>
 </div>
+<script th:src="@{/js/form.js}"></script>
 </body>
 </html>

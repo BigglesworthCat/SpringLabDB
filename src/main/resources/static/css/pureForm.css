@@ -1,30 +1,3 @@
-.page {
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.mainMenu {
-    font-size: xx-large;
-}
-
-.entityTable {
-    font-size: xx-small;
-    margin-bottom: 20px;
-    border: 1px solid #dddddd;
-    border-collapse: collapse;
-}
-
-.entityTable th {
-    font-weight: bold;
-    padding: 5px;
-    background: #efefef;
-    border: 1px solid #dddddd;
-}
-
-.entityTable td {
-    border: 1px solid #dddddd;
-    padding: 5px;
-}
-
 .formWrapper {
     display:flex;
     justify-content: center;

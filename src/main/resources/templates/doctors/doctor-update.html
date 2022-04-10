@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Update doctor</title>
-    <link rel="stylesheet" th:href="@{/myStyle.css}"/>
+    <link rel="stylesheet" th:href="@{css/form.css}"/>
 </head>
 <body class="page">
 <div class="formWrapper">
@@ -54,14 +54,12 @@
             <input type="number" th:field="*{salary}" id="salary" placeholder="Salary">
             <br>
 
-            <div class="horizontalButtonWrapper">
-                <div class="buttonsContainer">
-                    <input class="button buttonSubmit" type="submit" value="Submit">
-                </div>
-            </div>
+            <input class="buttonSubmit" type="submit" value="Submit">
+
             <p><a href="/doctors/list">Back</a></p>
         </fieldset>
     </form>
 </div>
+<script th:src="@{/js/form.js}"></script>
 </body>
 </html>
