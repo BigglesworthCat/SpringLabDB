@@ -3,46 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <title>Doctors</title>
+    <link rel="stylesheet" th:href="@{/css/page.css}"/>
     <link rel="stylesheet" th:href="@{/css/table.css}"/>
 </head>
-<body class="page">
-<div th:switch="${doctors}" align="center">
-    <h2 th:case="null">No doctors found!</h2>
-    <div th:case="*">
-        <h2>Doctors</h2>
-        <table class="entityTable">
-            <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Cabinet</th>
-                <th>Work time</th>
-                <th>Service</th>
-                <th>Contract ID</th>
-                <th>Salary</th>
-                <th>Edit</th>
-                <th>Delete</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="doctor : ${doctors}">
-                <td th:text="${doctor.id}"></td>
-                <td th:text="${doctor.name}"></td>
-                <td th:text="${doctor.position}"></td>
-                <td th:text="${doctor.cabinetNum}"></td>
-                <td th:text="${doctor.workTime}"></td>
-                <td th:text="${doctor.service}"></td>
-                <td th:text="${doctor.contractId}"></td>
-                <td th:text="${doctor.salary}"></td>
-                <td><a th:href="@{doctor-update/{id}(id=${doctor.id})}">Edit</a></td>
-                <td><a th:href="@{doctor-delete/{id}(id=${doctor.id})}">Delete</a></td>
-            </tr>
-            </tbody>
-        </table>
+<body>
+<div class="menu-container">
+    <div class="menu">
+        <h1>Doctors</h1>
+        <div class="table-container" th:switch="${doctors}">
+            <h1 th:case="null">No doctors found!</h1>
+            <div th:case="*">
+                <table class="entityTable">
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Cabinet</th>
+                        <th>Work time</th>
+                        <th>Service</th>
+                        <th>Contract ID</th>
+                        <th>Salary</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="doctor : ${doctors}">
+                        <td th:text="${doctor.id}"></td>
+                        <td th:text="${doctor.name}"></td>
+                        <td th:text="${doctor.position}"></td>
+                        <td th:text="${doctor.cabinetNum}"></td>
+                        <td th:text="${doctor.workTime}"></td>
+                        <td th:text="${doctor.service}"></td>
+                        <td th:text="${doctor.contractId}"></td>
+                        <td th:text="${doctor.salary}"></td>
+                        <td><a th:href="@{doctor-update/{id}(id=${doctor.id})}">Edit</a></td>
+                        <td><a th:href="@{doctor-delete/{id}(id=${doctor.id})}">Delete</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <a class="button-container" href="/doctors/doctor-create"><input type="button" value="Create contract"></a>
+        <a class="button-container" href="/"><input type="button" value="Back"></a>
     </div>
-    <p><a href="/doctors/doctor-create">Create doctor</a></p>
-    <p><a href="/">Home</a></p>
 </div>
 </body>
 </html>

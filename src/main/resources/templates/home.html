@@ -2,15 +2,17 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
-    <link rel="stylesheet" th:href="@{/myStyle.css}"/>
+    <title>Update patient</title>
+    <link rel="stylesheet" th:href="@{/css/page.css}"/>
 </head>
-<body class="page">
-<div class="mainMenu" align="center">
-    <h2>Home</h2>
-    <p><a href="/contracts/list">Contracts</a></p>
-    <p><a href="/doctors/list">Doctors</a></p>
-    <p><a href="/patients/list">Patients</a></p>
+<body>
+<div class="menu-container">
+    <div class="menu">
+        <h1>Home</h1>
+        <a class="button-container" href="/contracts/list"><input type="button" value="Contracts"></a>
+        <a class="button-container" href="/doctors/list"><input type="button" value="Doctors"></a>
+        <a class="button-container" href="/patients/list"><input type="button" value="Patients"></a>
+    </div>
 </div>
 </body>
 </html>

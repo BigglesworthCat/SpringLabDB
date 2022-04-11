@@ -3,40 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>Patients</title>
+    <link rel="stylesheet" th:href="@{/css/page.css}"/>
     <link rel="stylesheet" th:href="@{/css/table.css}"/>
 </head>
-<body class="page">
-<div th:switch="${patients}" align="center">
-    <h2 th:case="null">No patients found!</h2>
-    <div th:case="*">
-        <h2>Patients</h2>
-        <table class="entityTable">
-            <thead>
-            <tr>
-                <th>Card Id</th>
-                <th>Name</th>
-                <th>Address</th>
-                <th>Med. police</th>
-                <th>Sex</th>
-                <th>Edit</th>
-                <th>Delete</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="patient : ${patients}">
-                <td th:text="${patient.id}"></td>
-                <td th:text="${patient.name}"></td>
-                <td th:text="${patient.address}"></td>
-                <td th:text="${patient.medPolice}"></td>
-                <td th:text="${patient.sex}"></td>
-                <td><a th:href="@{patient-update/{id}(id=${patient.id})}">Edit</a></td>
-                <td><a th:href="@{patient-delete/{id}(id=${patient.id})}">Delete</a></td>
-            </tr>
-            </tbody>
-        </table>
+<body>
+<div class="menu-container">
+    <div class="menu">
+        <h1>Patients</h1>
+        <div class="table-container" th:switch="${patients}">
+            <h1 th:case="null">No patients found!</h1>
+            <div th:case="*">
+                <table class="entityTable">
+                    <thead>
+                    <tr>
+                        <th>Card Id</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Med. police</th>
+                        <th>Sex</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="patient : ${patients}">
+                        <td th:text="${patient.id}"></td>
+                        <td th:text="${patient.name}"></td>
+                        <td th:text="${patient.address}"></td>
+                        <td th:text="${patient.medPolice}"></td>
+                        <td th:text="${patient.sex}"></td>
+                        <td><a th:href="@{patient-update/{id}(id=${patient.id})}">Edit</a></td>
+                        <td><a th:href="@{patient-delete/{id}(id=${patient.id})}">Delete</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <a class="button-container" href="/patients/patients-create"><input type="button" value="Create contract"></a>
+        <a class="button-container" href="/"><input type="button" value="Back"></a>
     </div>
-    <p><a href="/patients/patient-create">Create patient</a></p>
-    <p><a href="/">Home</a></p>
 </div>
 </body>
 </html>

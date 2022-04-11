@@ -1,3 +1,9 @@
+/*.table-container {*/
+/*    !*width: fit-content;*!*/
+/*    overflow-x:auto;*/
+/*    background: bisque;*/
+/*}*/
+
 .entityTable {
     font-size: medium;
     margin-bottom: 20px;
