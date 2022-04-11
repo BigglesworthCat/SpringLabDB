@@ -1,12 +1,9 @@
-/*.table-container {*/
-/*    !*width: fit-content;*!*/
-/*    overflow-x:auto;*/
-/*    background: bisque;*/
-/*}*/
+.table-container {
+    overflow-y: scroll;
+}
 
 .entityTable {
     font-size: medium;
-    margin-bottom: 20px;
     border: 1px solid #dddddd;
     border-collapse: collapse;
 }
